@@ -25,7 +25,6 @@ const initState: Array<InitStateType> = [{
 export function postsReducer(state=initState, action:ActionType): Array<InitStateType>{
     switch (action.type){
         case 'GET-POSTS':{
-            console.log(action.payload)
             return [...action.payload]
         }
         default:

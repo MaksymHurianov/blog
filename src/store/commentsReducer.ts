@@ -26,7 +26,6 @@ const initState: Array<InitStateType> = [{
 export function commentsReducer(state=initState, action:ActionType){
         switch (action.type){
             case 'GET-POST-COMMENT':{
-                console.log(action.payload)
                 return [...action.payload]
             }
             default:
