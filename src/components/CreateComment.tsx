@@ -18,7 +18,7 @@ export function CreateComment({id}:IdType){
     function submit(e:any){
         setValue("")
         postsAPI.createComment({
-            "postId": +id,
+            "postId": +id ?? id,
             "body": value
         }).then(data=>{
             dispatch(getPostCommentThunkCreator(id))
