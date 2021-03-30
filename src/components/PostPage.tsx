@@ -37,9 +37,13 @@ export function PostPage({posts}: PropsType) {
     useEffect(() => {
         dispatch(getPostCommentThunkCreator(id))
     }, [])
+
     const post = posts.find((post) => {
-        return post.id === +id
+        //@ts-ignore
+        return post.id == id
     })
+
+
     if (!post) {
         return <h1>404: PAGE NOT FOUND</h1>
     }
@@ -72,11 +76,13 @@ export function PostPage({posts}: PropsType) {
 
     function setTitle() {
         dispatch(updateCommentThunkCreator(id, value))
+        console.log(value)
         setUpdateTitle(true)
     }
 
     function setBody() {
         dispatch(updateCommentThunkCreator(id, value))
+        console.log(value)
         setUpdateBody(true)
     }
 

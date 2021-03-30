@@ -14,6 +14,7 @@ import {AppRootStateType} from "./store/store";
 function App() {
     const dispatch = useDispatch()
     const posts = useSelector<AppRootStateType, Array<InitStateType> >(state => state.posts)
+    console.log(posts)
     useEffect(() => {
         dispatch(getPostsThunkCreator())
     }, [])
